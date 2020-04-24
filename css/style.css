@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 100vh;
+  background: radial-gradient(#04619f, #000000);
+  color: white;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow-x: hidden;
+}
+
+.page-title {
+  font-size: 3.4em;
+  margin: 0;
+}
+
+.game-continer {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 100%;
+}
+
+.info-container button {
+  margin: 12px 0;
+  padding: 5px 15px;
+  width: 100px;
+  outline: none;
+  border: 1px solid white;
+  background-color: #001421;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  text-transform: uppercase;
+}
+
+@media (max-width: 450px) {
+  .info-container button {
+    width: auto;
+  }
+}
+
+.info-container button:hover {
+  border: 1px solid #001421;
+  background-color: white;
+  color: #001421;
+}
+
+.game-info {
+  font-size: 1.8em;
+  padding: 15px 0;
+}
+
+@media (max-width: 650px) {
+  .game-info {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 450px) {
+  .game-info {
+    font-size: 1em;
+  }
+}
+
+.time {
+  display: inline-block;
+}
+
+.card-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[6];
+      grid-template-columns: repeat(6, auto);
+  grid-gap: 7px;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+}
+
+@media (max-width: 650px) {
+  .card-container {
+    -ms-grid-columns: (auto)[4];
+        grid-template-columns: repeat(4, auto);
+  }
+}
+
+.card {
+  background-color: #999;
+  height: 135px;
+  width: 94px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  position: relative;
+  border: 2px solid #001421;
+}
+
+@media (max-width: 450px) {
+  .card {
+    height: 100px;
+    width: 75px;
+  }
+}
+
+.card.visible .card-back {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.card.visible .card-face {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+.card .card-face {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.card .card-back,
+.card .card-face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.card .card-back img,
+.card .card-face img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+/*# sourceMappingURL=style.css.map */
