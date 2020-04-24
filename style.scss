@@ -68,7 +68,6 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #fff;
   }
   @media (max-width: 650px) {
     grid-template-columns: repeat(4, auto);
@@ -81,14 +80,7 @@ body {
   transition: 0.3s;
   position: relative;
   border: 2px solid #001421;
-  &.stop:after {
-    box-sizing: border-box;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: red;
-  }
+
   @media (max-width: 450px) {
     height: 100px;
     width: 75px;
