@@ -88,6 +88,7 @@ const handleMove = function (card) {
           cards.forEach((card) => {
             card.classList.remove("visible");
           });
+          openCard = null;
         }, 600);
       } else if (openCardCounter === 24) handleWin();
       else {
