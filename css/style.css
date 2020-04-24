@@ -92,6 +92,16 @@ body {
           perspective: 500px;
 }
 
+.card-container.stop:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
 @media (max-width: 650px) {
   .card-container {
     -ms-grid-columns: (auto)[4];
@@ -102,11 +112,21 @@ body {
 .card {
   background-color: #999;
   height: 135px;
-  width: 94px;
+  width: 90px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   position: relative;
   border: 2px solid #001421;
+}
+
+.card.stop:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
 }
 
 @media (max-width: 450px) {

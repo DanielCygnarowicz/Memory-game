@@ -2,7 +2,9 @@ const timer = document.querySelector(".time");
 const moves = document.querySelector(".moves");
 const btn_start = document.querySelector(".start");
 const btn_reset = document.querySelector(".reset");
+const cardContainer = document.querySelector(".card-container");
 let cards = document.querySelectorAll(".card");
+
 cards = [...cards];
 let isOn = false;
 let interval = null;
@@ -38,10 +40,12 @@ const resetClock = () => {
   timer.innerHTML = "00:00:00";
 };
 const init = () => {
+  cardContainer.classList.add("stop");
   cards = document.querySelectorAll(".card");
   cards = [...cards];
   cards.forEach((card) => {
     card.classList.remove("visible");
+    card.classList.remove("stop");
     let order = Math.floor(Math.random() * 100);
     card.style.order = order;
   });
@@ -64,8 +68,10 @@ const handleStart = () => {
   btn_start.innerHTML = isOn ? "Stop" : "Start";
   if (isOn) {
     clock();
+    cardContainer.classList.remove("stop");
   } else {
     clearInterval(interval);
+    cardContainer.classList.add("stop");
   }
 };
 const handleWin = () => {
